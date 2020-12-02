@@ -6,6 +6,7 @@ import HomePage from "./components/pages/homepage/HomePage";
 import About from "./components/pages/about/About";
 import Create from "./components/pages/create/Create";
 import Join from "./components/pages/join/Join";
+import EventPage from "./components/pages/eventpage/EventPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
               <Route path ='/About' component={About}/>
               <Route path ='/Create' component={Create}/>
               <Route path ='/Join' component={Join}/>
+              <Route path = '/EventPage' component={EventPage}/>
           </Switch>
       </React.Fragment>
   );

@@ -1,8 +1,11 @@
 import React from 'react';
+import InputCreateContainer from "./inputcreate/inputCreateContainer";
 
 function Create(props) {
     return (
-        <div>Create</div>
+            <React.Fragment>
+                <InputCreateContainer/>
+            </React.Fragment>
     );
 }
 

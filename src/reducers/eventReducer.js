@@ -1,7 +1,9 @@
 import {
     FETCH_EVENTS_PENDING,
     FETCH_EVENTS_SUCCESS,
-    FETCH_EVENTS_FAILURE
+    FETCH_EVENTS_FAILURE,
+    CHANGE_EVENT_SLUG,
+
 } from "../actions/EventFetch";
 
 
@@ -13,10 +15,12 @@ const initialState= {
 
     error:{
         events: null,
-    }
+    },
 
-
+    eventSlug:""
 };
+
+
 function EventReducer(state=initialState, action)
 {
     switch (action.type) {
@@ -36,6 +40,11 @@ function EventReducer(state=initialState, action)
                 ...state, error: action.payload,
                 loading: {...state.loading, events: false}
             };
+
+        case CHANGE_EVENT_SLUG:
+            return{
+                ...state, eventSlug: action.payload
+            }
 
         default:
             return state;
