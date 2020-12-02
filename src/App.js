@@ -6,7 +6,7 @@ import HomePage from "./components/pages/homepage/HomePage";
 import About from "./components/pages/about/About";
 import Create from "./components/pages/create/Create";
 import Join from "./components/pages/join/Join";
-import EventPage from "./components/pages/eventpage/EventPage";
+import EventPageContainer from "./components/pages/eventpage/EventPageContainer";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
               <Route path ='/About' component={About}/>
               <Route path ='/Create' component={Create}/>
               <Route path ='/Join' component={Join}/>
-              <Route path = '/EventPage' component={EventPage}/>
+              <Route path = '/EventPage/:slug' component={EventPageContainer}/>
           </Switch>
       </React.Fragment>
   );

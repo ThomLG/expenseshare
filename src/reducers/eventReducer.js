@@ -3,21 +3,25 @@ import {
     FETCH_EVENTS_SUCCESS,
     FETCH_EVENTS_FAILURE,
     CHANGE_EVENT_SLUG,
+    CREATE_EVENT_NAME
 
 } from "../actions/EventFetch";
 
 
 const initialState= {
-    events:[],
+    event:null,
+
     loading:{
-        events: false,
+        event: false,
     },
 
     error:{
-        events: null,
+        event: null,
     },
 
-    eventSlug:""
+    eventSlug:"",
+
+    eventName:""
 };
 
 
@@ -27,23 +31,28 @@ function EventReducer(state=initialState, action)
         case FETCH_EVENTS_PENDING:
             return {
                 ...state,
-                loading: {...state.loading, events : true}
+                loading: {...state.loading, event : true}
             };
         case FETCH_EVENTS_SUCCESS:
             return {
                 ...state,
-                events: action.payload,
-                loading: {...state.loading, events: false}
+                event: action.payload,
+                loading: {...state.loading, event: false}
             };
         case FETCH_EVENTS_FAILURE:
             return {
                 ...state, error: action.payload,
-                loading: {...state.loading, events: false}
+                loading: {...state.loading, event: false}
             };
 
         case CHANGE_EVENT_SLUG:
             return{
                 ...state, eventSlug: action.payload
+            }
+
+        case CREATE_EVENT_NAME:
+            return {
+                ...state, eventName: action.payload
             }
 
         default:

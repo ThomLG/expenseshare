@@ -9,11 +9,8 @@ import thunk from "redux-thunk";
 import {Provider} from "react-redux"
 import reducer from "./reducers/reducer";
 import {composeWithDevTools} from "redux-devtools-extension";
-import {fetchEvents} from "./actions/EventFetch";
-
 const store=createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
-store.dispatch(fetchEvents());
 
 ReactDOM.render(
 

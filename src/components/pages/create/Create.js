@@ -1,5 +1,5 @@
 import React from 'react';
-import InputCreateContainer from "./inputcreate/inputCreateContainer";
+import InputCreateContainer from "./inputcreate/InputCreateContainer";
 
 function Create(props) {
     return (
