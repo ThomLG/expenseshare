@@ -7,7 +7,8 @@ import {fetchEventsExpenses} from "../../../actions/EventExpensesFetch";
 // Envoyer des données dans les props
 const mapStateToProps = (state) => ({
     event:state.eventReducer.event,
-    expenses:state.eventExpensesReducer.expenses
+    expenses:state.eventExpensesReducer.expenses,
+    error: state.eventReducer.error
 })
 
 // Envoyer des fonctions dans les props

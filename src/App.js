@@ -1,5 +1,6 @@
 import './App.scss';
 import React from "react";
+import "./App.scss";
 import NavBar from "./components/layout/navbar/NavBar";
 import {Switch, Route} from "react-router-dom";
 import HomePage from "./components/pages/homepage/HomePage";

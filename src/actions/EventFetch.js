@@ -3,7 +3,15 @@ export function fetchEvents(slug){
         dispatch(fetchEventsPending());
         fetch(process.env.REACT_APP_API_URL + '/events/'+ slug)
             .then(response=>response.json())
-            .then(data=>dispatch(fetchEventsSuccess(data)))
+            .then(data=>{
+                if(data["@type"]==="hydra:Error"){
+                        return dispatch(fetchEventsFailure(data));
+                }
+                return dispatch(fetchEventsSuccess(data))
+
+        }
+
+        )
             .catch(err=>dispatch(fetchEventsFailure(err)))
     }
 }

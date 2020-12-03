@@ -35,19 +35,21 @@ function EventReducer(state=initialState, action)
             };
         case FETCH_EVENTS_SUCCESS:
             return {
-                ...state,
+                ...state, error:null,
                 event: action.payload,
                 loading: {...state.loading, event: false}
             };
         case FETCH_EVENTS_FAILURE:
             return {
-                ...state, error: action.payload,
+                ...state,
+                error: action.payload,
                 loading: {...state.loading, event: false}
             };
 
         case CHANGE_EVENT_SLUG:
             return{
-                ...state, eventSlug: action.payload
+                ...state,
+                eventSlug: action.payload
             }
 
         case CREATE_EVENT_NAME:
